@@ -1,0 +1,15 @@
+Projekt zakłada crawlowanie strony https://e-katalog.intercars.com.pl, pobieranie danych.
+zapis danych w pliku csv oraz późniejsze wyswietlanie danych za pomocą prostej wyszukiwarki
+
+plik crawler.py zawiera funkcję które maja za zadanie "odnaleźć" wszystkie linki które zawieraja produkty.
+Zaczynając od "https://e-katalog.intercars.com.pl" dodajemy kolejne mozliwe elementy linku jakie zawiera strona,
+budując w pętlach kolejne możliwe wariacje adresu i zapisujemy je w listach aż będzie miał postać
+"https://e-katalog.intercars.com.pl/#/ekatalog/category/products/number/number",
+np: "https://e-katalog.intercars.com.pl/#/ekatalog/osobowe/towary/2134/1401000000/".
+
+Posiadając wszystkie linki wywołujemy funkcję find_goods(lista_adresow) ktora pobierze i zapisze dane do pliku
+products.csv w postaci | nazwa, cena, ilość, marka samochodu/motoru, model samochodu/motoru |.
+
+za pomocą pliku find.py możemy w łatwy sposób wyszukać wcześniej pobrane elementy, wyszukiwarka wyszukuję
+po jednej z 4 wartosci nazwy, ceny, marki, modelu, po wybraniu jednej z nich(przypisanej do wartosci od 1-4)
+program zapyta o fraze wedlug której ma przeszukać plik, i wyswietli wszystkie pasujace rezultaty
